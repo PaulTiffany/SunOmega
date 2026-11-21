@@ -1,0 +1,16 @@
+{
+  "id": "capability-midi-create",
+  "kind": "capability",
+  "title": "MIDI input conditions Suno generation",
+  "summary": "Suno documents MIDI score uploads in Simple Create to guide notes, with text instructions guiding the arrangement. Desktop plan restrictions are documented; MCP capabilities must be probed separately.",
+  "status": "documented",
+  "topics": [
+    "midi",
+    "suno",
+    "generation"
+  ],
+  "sources": [
+    "source-suno-midi-2026"
+  ],
+  "relations": []
+}
