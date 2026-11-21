@@ -1,0 +1,21 @@
+{
+  "id": "technique-reference-roles",
+  "kind": "technique",
+  "title": "Assign each audio reference a limited role",
+  "summary": "Community hypothesis: when using multiple eligible audio references, specify which musical property each should influence instead of requesting an undifferentiated blend.",
+  "status": "hypothesis",
+  "topics": [
+    "references",
+    "arrangement",
+    "prompts"
+  ],
+  "sources": [
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": [
+    {
+      "predicate": "refines",
+      "target": "technique-producer-brief"
+    }
+  ]
+}
