@@ -1,0 +1,16 @@
+{
+  "id": "capability-official-mcp",
+  "kind": "capability",
+  "title": "Suno official remote MCP",
+  "summary": "Suno documents https://api.suno.com/mcp and a sign-in/authorization procedure for compatible assistants. This does not prove an Omega has connected.",
+  "status": "documented",
+  "topics": [
+    "mcp",
+    "suno",
+    "tools"
+  ],
+  "sources": [
+    "source-suno-mcp-2026"
+  ],
+  "relations": []
+}
