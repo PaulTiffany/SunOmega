@@ -1,0 +1,21 @@
+{
+  "id": "technique-arrangement-arc",
+  "kind": "technique",
+  "title": "Specify arrangement evolution",
+  "summary": "Community hypothesis: describing when layers enter, retreat, widen, or resolve may help a track develop more coherently than asking for a generic dramatic chorus.",
+  "status": "hypothesis",
+  "topics": [
+    "prompts",
+    "dynamics",
+    "arrangement"
+  ],
+  "sources": [
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": [
+    {
+      "predicate": "refines",
+      "target": "technique-producer-brief"
+    }
+  ]
+}
