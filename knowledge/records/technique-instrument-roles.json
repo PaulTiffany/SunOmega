@@ -1,0 +1,21 @@
+{
+  "id": "technique-instrument-roles",
+  "kind": "technique",
+  "title": "Give instruments specific arrangement roles",
+  "summary": "Community hypothesis: assigning each important instrument a concrete musical job may steer arrangements more effectively than adding broad mood adjectives.",
+  "status": "hypothesis",
+  "topics": [
+    "prompts",
+    "orchestration",
+    "instruments"
+  ],
+  "sources": [
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": [
+    {
+      "predicate": "refines",
+      "target": "technique-producer-brief"
+    }
+  ]
+}
