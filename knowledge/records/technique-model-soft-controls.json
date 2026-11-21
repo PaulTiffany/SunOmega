@@ -1,0 +1,16 @@
+{
+  "id": "technique-model-soft-controls",
+  "kind": "technique",
+  "title": "Treat text BPM and section instructions as soft guidance",
+  "summary": "Community warning: tempo, bar counts, key changes and bracketed section cues in prose are not deterministic DAW commands; verify generated audio against targets.",
+  "status": "hypothesis",
+  "topics": [
+    "prompts",
+    "timing",
+    "evaluation"
+  ],
+  "sources": [
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": []
+}
