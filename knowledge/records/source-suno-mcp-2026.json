@@ -1,0 +1,16 @@
+{
+  "id": "source-suno-mcp-2026",
+  "kind": "source",
+  "title": "Official Suno MCP connection guide",
+  "summary": "Suno explains the remote MCP endpoint and interactive authorization flow.",
+  "status": "primary-documentation",
+  "topics": [
+    "mcp",
+    "suno",
+    "authentication"
+  ],
+  "url": "https://help.suno.com/en/articles/14551425",
+  "accessed": "2026-11-21",
+  "sources": [],
+  "relations": []
+}
