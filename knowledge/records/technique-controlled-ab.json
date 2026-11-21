@@ -1,0 +1,16 @@
+{
+  "id": "technique-controlled-ab",
+  "kind": "technique",
+  "title": "Change one production variable at a time",
+  "summary": "Community hypothesis: compare controlled prompt/settings alternatives and their generated audio before attributing a change in outcome to a particular instruction.",
+  "status": "hypothesis",
+  "topics": [
+    "experiments",
+    "evaluation",
+    "prompts"
+  ],
+  "sources": [
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": []
+}
