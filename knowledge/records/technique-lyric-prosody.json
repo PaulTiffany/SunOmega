@@ -1,0 +1,17 @@
+{
+  "id": "technique-lyric-prosody",
+  "kind": "technique",
+  "title": "Adjust lyric prosody before adding style tags",
+  "summary": "Community hypothesis: line length, syllable count and repetition may influence vocal pacing and melodic variation. Model- and genre-specific verification is needed.",
+  "status": "hypothesis",
+  "topics": [
+    "lyrics",
+    "prosody",
+    "melody",
+    "prompts"
+  ],
+  "sources": [
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": []
+}
