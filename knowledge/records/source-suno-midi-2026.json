@@ -1,0 +1,16 @@
+{
+  "id": "source-suno-midi-2026",
+  "kind": "source",
+  "title": "Official Suno MIDI Create guide",
+  "summary": "Suno describes using a MIDI score in Simple Create and the supported plan scope.",
+  "status": "primary-documentation",
+  "topics": [
+    "midi",
+    "suno",
+    "generation"
+  ],
+  "url": "https://help.suno.com/en/articles/14594177",
+  "accessed": "2026-11-21",
+  "sources": [],
+  "relations": []
+}
