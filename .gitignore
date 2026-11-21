@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+data/private/
+data/audio/
+*.mp3
+*.wav
+*.flac
+*.mid
+*.midi
