@@ -1,0 +1,16 @@
+{
+  "id": "technique-local-repair",
+  "kind": "technique",
+  "title": "Repair a weak song section before full regeneration",
+  "summary": "Community hypothesis: targeted editing, extensions or reuse of a stronger sibling take may preserve good parts more effectively than changing the whole prompt.",
+  "status": "hypothesis",
+  "topics": [
+    "editing",
+    "extensions",
+    "song-continuity"
+  ],
+  "sources": [
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": []
+}
