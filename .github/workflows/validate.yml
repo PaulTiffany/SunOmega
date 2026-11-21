@@ -18,3 +18,15 @@ jobs:
           python -m unittest discover -s tests -v
           sunomega export-metta > sunomega.generated.metta
           test -s sunomega.generated.metta
+
+  atomspace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Hyperon adapter
+        run: python -m pip install -e ".[atomspace]"
+      - name: Load and query real AtomSpace
+        run: sunomega smoke-metta
