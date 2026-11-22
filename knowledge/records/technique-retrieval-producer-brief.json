@@ -19,5 +19,59 @@
       "predicate": "refines",
       "target": "technique-producer-brief"
     }
-  ]
+  ],
+  "build": {
+    "target": "Retrieve cited SunOmega production knowledge before creating a song brief and avoid unsupported prompt folklore.",
+    "requires": [
+      "Local SunOmega records or a read-only knowledge adapter",
+      "Original user musical request"
+    ],
+    "inputs": [
+      "Task description in everyday language",
+      "Model and authorization context"
+    ],
+    "outputs": [
+      "Relevant records with status, source and applicability",
+      "A concise prioritized brief and unresolved evidence gaps"
+    ],
+    "execute": [
+      "Search titles, summaries, build targets and matchup applicability, using alternative musical terms when needed.",
+      "Rank relevant provider capabilities above community hypotheses for API behavior.",
+      "Inspect source IDs, status, restrictions, negative evidence and steps of candidate builds.",
+      "Select an applicable approach without acting on inaccessible or unapproved tools.",
+      "Show selected techniques with source links and uncertainty; record retrieval misses."
+    ],
+    "matchup": {
+      "applies_when": [
+        "A task resembles an existing issue such as rushed vocals or a flat chorus.",
+        "The agent is unsure which Suno operation or prompt strategy applies."
+      ],
+      "avoid_when": [
+        "No repository access is available and the requested facts are not in the current context.",
+        "Retrieved entry is deprecated or conflicts with the user's explicit requirement."
+      ]
+    },
+    "effects": [
+      "local-read"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Reading a build never grants authority to execute it.",
+        "Do not pretend substring matching is semantic retrieval."
+      ]
+    },
+    "stop_when": [
+      "Relevant sourced guidance has been retrieved or no justified match can be found.",
+      "Leave unresolved conflicts explicit."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Each recommendation links to an actual record/source.",
+        "Evaluate retrieval against a held-out natural-language query set."
+      ],
+      "evidence": []
+    }
+  }
 }
