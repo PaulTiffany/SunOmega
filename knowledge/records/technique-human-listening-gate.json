@@ -18,5 +18,58 @@
       "predicate": "refines",
       "target": "technique-controlled-ab"
     }
-  ]
+  ],
+  "build": {
+    "target": "Evaluate musical quality by real listening and clearly separate technical compliance from aesthetic preference.",
+    "requires": [
+      "Legally accessible music output or owned clip",
+      "Explicit evaluator criteria and permission to collect feedback"
+    ],
+    "inputs": [
+      "Musical goal and source score/prompt",
+      "Anonymized candidate audio identifiers"
+    ],
+    "outputs": [
+      "Audio technical metrics with uncertainty",
+      "Human preference notes with comparison scope"
+    ],
+    "execute": [
+      "Verify audio exists and is ready; collect tempo/sections or pitch metrics when supported.",
+      "Keep objective checks separate from musical goals such as excitement, beauty or emotional build.",
+      "Randomize/blind candidate order when comparing production methods.",
+      "Collect listener feedback without inferring psychological state or retaining identity by default.",
+      "Report agreement, disagreement, null results and source/model applicability."
+    ],
+    "matchup": {
+      "applies_when": [
+        "Aesthetic success matters beyond file validity.",
+        "Audio metrics and human judgment disagree."
+      ],
+      "avoid_when": [
+        "No consenting listener evaluation is available; report missing judgment.",
+        "An automated score is being mistaken for ground truth about preferences."
+      ]
+    },
+    "effects": [
+      "local-read"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "No unnecessary retention of personal preferences or physiological data.",
+        "Do not call listener evaluation 'proven' from a single model-generated adjective."
+      ]
+    },
+    "stop_when": [
+      "Technical metrics and a separate human evaluation are recorded, or missing evidence clearly noted."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Output contains explicit technical and listening columns.",
+        "Blind evaluation protocol and number of listeners are disclosed."
+      ],
+      "evidence": []
+    }
+  }
 }
