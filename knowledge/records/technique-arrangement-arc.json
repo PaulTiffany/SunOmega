@@ -17,5 +17,63 @@
       "predicate": "refines",
       "target": "technique-producer-brief"
     }
-  ]
+  ],
+  "build": {
+    "target": "Describe a meaningful progression of instrumentation and dynamics across an original song.",
+    "requires": [
+      "Song sections or estimated section goals",
+      "Named instrumental roles",
+      "Permission and credits if sending to Suno"
+    ],
+    "inputs": [
+      "Desired emotional or energy trajectory",
+      "Current musical sketch or style",
+      "Suno generation mode"
+    ],
+    "outputs": [
+      "A section-by-section build/release plan",
+      "Optionally an audio analysis and listener report"
+    ],
+    "execute": [
+      "Describe the opening texture, development, peak and resolution in musical actions.",
+      "Assign arrivals and withdrawals of instruments or rhythmic density to section boundaries.",
+      "Keep vocal pacing and motif continuity explicit without pretending to prescribe exact bar counts.",
+      "Generate only if authorized; inspect whether sections repeat and change audibly.",
+      "Document the difference between requested narrative and actual arrangement."
+    ],
+    "matchup": {
+      "applies_when": [
+        "A song feels static, flat or lacks a satisfying build.",
+        "A dramatic chorus needs space and contrast."
+      ],
+      "avoid_when": [
+        "Exact orchestral hits must align to a picture; prefer deterministic composition/editing.",
+        "No section-level control is available in the selected tool."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Section prose is a soft request, not deterministic scheduling.",
+        "Respect approved generation budget."
+      ]
+    },
+    "stop_when": [
+      "A reviewable arc exists or the constraints are unresolved.",
+      "After bounded generation and human comparison, stop with observed outcome."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Audio sections and listener reports support or contradict the arc.",
+        "Link each claim to the specific model/settings used."
+      ],
+      "evidence": []
+    }
+  }
 }
