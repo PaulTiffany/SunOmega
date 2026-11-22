@@ -31,8 +31,15 @@ class BuildContractTests(unittest.TestCase):
                 if b["proof"]["status"] in {"locally-tested", "provider-tested", "listener-observed"}:
                     self.assertTrue(b["proof"]["evidence"])
                 # Community prompt guidance remains a hypothesis, not an achievement.
-                if r["id"].startswith("technique-") and r["id"] != "technique-semantic-score-layer":
+                if r["kind"] == "technique":
                     self.assertEqual(b["proof"]["status"], "proposed")
+
+    def test_executable_package_links_are_really_present(self):
+        from sunomega.builds import validate_package_links
+        validate_package_links(self.records, ROOT)
+        skill = next(r for r in self.records if r["id"] == "capability-semantic-midi")
+        self.assertEqual(skill["build_path"], "skills/semantic-midi/build.json")
+        self.assertEqual(skill["build"]["proof"]["status"], "locally-tested")
 
     def test_symbolic_projection_preserves_steps_authority_and_proof(self):
         atoms = to_metta(self.records)
