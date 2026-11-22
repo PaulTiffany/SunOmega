@@ -5,9 +5,10 @@
 Read in order:
 1. [GF transfer](GF_TRANSFER.md) — execute a move rather than merely read advice.
 2. [Suno evidence and research priorities](SUNO_EVIDENCE.md) — source-by-source provider vs community vs research status.
-3. [Semantic score RFC](SEMANTIC_SCORE_RFC.md) — semantic dictation -> explicit score -> deterministic MIDI.
-4. [Experiment plan](EXPERIMENT_PLAN.md) — falsifiable, cost-bounded trials and clear receipts.
-5. [Source register](sources.json) — direct URLs, publisher, dates, evidence class and claim scope.
+3. [Observed Suno MCP tool surface](SUNO_MCP_TOOL_SURFACE.md) — host-specific actual tool affordances, entitlements and spending boundaries.
+4. [Semantic score RFC](SEMANTIC_SCORE_RFC.md) — semantic dictation -> explicit score -> deterministic MIDI.
+5. [Experiment plan](EXPERIMENT_PLAN.md) — falsifiable, cost-bounded trials and clear receipts.
+6. [Source register](sources.json) — direct URLs, publisher, dates, evidence class and claim scope.
 
 **Status:** literature and interface research plus a tested local MIDI compilation fixture. Source-linked claims and the GF build path are also ingested into `knowledge/records/` and exported as MeTTa atoms. No paid Suno generation, authenticated Omega operation, human evaluation, or MIDI-to-Suno fidelity experiment is claimed. A local MIDI compiler can establish only source-to-MIDI fidelity.
 
