@@ -6,6 +6,14 @@ These are **proposals**, not completed Suno experiments. Do not spend credits, u
 
 Use the official endpoint and existing Omega runtime. Record MCP transport/auth support, tool discovery, read-only usage/library response, and an explicitly authorized short generation. No assumption that the ChatGPT Suno connector's tool names/plan are available in Omega. **PASS** is observed Omega-originated action and finished original clip; an unsupported client is a documented blocker.
 
+## E0 — can agents retrieve the right production procedure? (local; zero Suno credits)
+
+**Question:** Can ChatGPT and an Omega locate the same useful, provenance-ranked Suno guidance when asked in ordinary musical language, without knowing a record ID in advance?
+
+Prepare 20 paraphrased prompts with expected relevant technique/build/source IDs and at least five distractor or contradiction cases (e.g., “the singer races through the verse,” “the chorus feels flat,” “I need a drum-only bridge,” “the uploaded melody is ignored”). Compare the existing substring search with a lightweight alias/field-aware retriever; report precision@3, missed capabilities, unsupported claims and source/status presentation. The current search is intentionally simple and may miss synonyms.
+
+**PASS** requires every served suggestion to link to its cited source and distinguish a confirmed tool capability from an anecdotal technique. Do not add a vector database until measured retrieval failures justify it.
+
 ## E1 — semantic composition fidelity (local; zero Suno credits)
 
 **Question:** can an LLM translate a musical brief into a valid, verifiable semantic score and produce an exact MIDI file without notes drifting from its own score?
