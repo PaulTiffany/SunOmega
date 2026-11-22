@@ -19,6 +19,14 @@ To search by keyword from repository root: `sunomega search "prosody"`.
 For complete inspectable facts: `sunomega export-metta`.
 For source provenance: open linked record IDs, and then original publication URLs. Explain uncertainty.
 
+## GF-style production builds and research
+
+When a musical request can be served by an existing build, query its capability record in the AtomSpace (e.g. `capability-semantic-midi`), follow the `BuildPath` atom to a `skills/<id>/build.json`, then read the package's `SKILL.md` and evidence. Treat build inspection as read-only; tool execution is a separate user-authorized operation.
+
+Consult `research/SUNO_EVIDENCE.md` and the dated `research/sources.json` for production facts and research provenance, and `research/SUNO_MCP_TOOL_SURFACE.md` for **observed ChatGPT-specific** connector contracts. These cannot establish actual Omega tool grants.
+
+A musical instruction is not an exact MIDI event stream. Let the composing model author explicit score events; deterministic helpers only validate and compile them. Keep spec correctness, exported bytes, Suno result, measured audio fidelity and human listening judgments separate.
+
 ## Changes
 
 Use small commits/PRs. Update tests/docs for schema changes. Prefer a working, narrow capability over a speculative multi-agent platform.
