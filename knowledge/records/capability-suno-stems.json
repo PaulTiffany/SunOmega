@@ -1,0 +1,17 @@
+{
+  "id": "capability-suno-stems",
+  "kind": "capability",
+  "title": "Suno stem separation options",
+  "summary": "Official Pro/Premier documentation includes Get Stems, and credits may apply to advanced split modes. MCP feature parity, plans, credit costs and permissions must be probed.",
+  "status": "documented",
+  "topics": [
+    "stems",
+    "audio",
+    "dj",
+    "suno"
+  ],
+  "sources": [
+    "source-suno-stems-2026"
+  ],
+  "relations": []
+}
