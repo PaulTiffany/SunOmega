@@ -1,24 +1,20 @@
-# Instructions for SunOmega agents and contributors
+# SunOmega — agent instructions
 
-**Purpose:** make Suno production knowledge reusable by ChatGPT and authorized Omegas. The repository is not an implementation of Omega or a place to publish unrelated research.
+SunOmega is an **applied music-production knowledge project**. Do not add private OmegaHive implementation details or unpublished origination/continual-learning research.
 
-## Required workflow
+## Query and use
 
-1. **Read docs/ARCHITECTURE.md, docs/KNOWLEDGE_POLICY.md, and knowledge/records before suggesting a best practice.**
-2. Distinguish official Suno features from user/community claims; cite record IDs and source URLs. Never upgrade a hypothesis to "tested" based solely on prose.
-3. Prefer one small, explicit, sourced record per technique over large copied guides. Run `sunomega validate`, `sunomega smoke-metta` (with optional Hyperon installed) and unit tests after knowledge changes.
-4. Retain failed/negative experiments and model/version scope. Do not erase disagreements; add relations and evidence.
-5. Never claim Omega↔Suno MCP works until M0 proof has been recorded. Use only https://api.suno.com/mcp for official Suno integration.
-6. Never expose credentials, assume ChatGPT's Suno authorization can be delegated, spend credits without operator approval, or store personal preference/biofeedback in this public repository.
-7. Do not add novel origination, continual-learning mechanisms, private OmegaHive code, or other independent research to this project.
-8. Keep tooling simple: core Python stdlib, optional Hyperon/MIDI/audio dependencies; no backend or database unless measured requirements justify one.
+1. Validate or inspect source-linked records: `sunomega builds`, `sunomega search "breathing"`, `sunomega show technique-lyric-prosody`, or query the generated MeTTa/Hyperon AtomSpace.
+2. Follow knowledge provenance: `Cites` edges reference source records; inspect source URL, date, kind and evidence status. Do not treat Reddit/community suggestions as official Suno contracts.
+3. When a technique has `build`, inspect GF fields: **Target / Equip / Execute / Matchup / Proof** plus `effects`, `bounds` and `stop_when`. Verify applicability, available host tools, rights, model grants and contradictions before choosing it.
+4. Only an explicit `BuildPath` (e.g. `capability-semantic-midi` -> `skills/semantic-midi/build.json`) points to an executable GF helper. Read that package's `SKILL.md`, helper and evidence before running it. Do not execute arbitrary procedural text.
+5. Reading an AtomSpace fact or production build **never authorizes** generating, uploading, spending credits, exposing user secrets, or scheduling work. Consult actual host permissions; use official Suno MCP only, check OAuth/account grants separately for each host.
+6. Keep five evidence layers separate: well-formed score, valid MIDI/audio artifact, provider completion, measured melodic/structural fidelity, and actual listener judgment. Do not substitute automatic metrics for preference.
+7. For each experiment, record model, controls, prompt/score/artifact hashes, clip IDs, costs, errors, negations, rights and scope. Never silently turn provisional advice into universal best practice.
+8. Keep private user preferences/biofeedback out of the public repository and protect third-party source copyrights. No speculative agent swarm, remote database or autonomous paid retries.
 
-## Query
+## Contribution workflow
 
-To search by keyword from repository root: `sunomega search "prosody"`.
-For complete inspectable facts: `sunomega export-metta`.
-For source provenance: open linked record IDs, and then original publication URLs. Explain uncertainty.
+Use small commits and a **draft PR for human readback**. Keep code and evidence scoped to one useful capability. Validate with `sunomega validate` and `python -m unittest discover -s tests -v`; run optional `sunomega smoke-metta` and inspect GitHub Actions. Do not mark someone else's review boxes complete.
 
-## Changes
-
-Use small commits/PRs. Update tests/docs for schema changes. Prefer a working, narrow capability over a speculative multi-agent platform.
+The source of truth is versioned JSON; the AtomSpace is an **index and query projection**, never a second manually edited knowledge store. See [knowledge model](knowledge/README.md), [GF transfer](research/GF_TRANSFER.md), [current provider research](research/SUNO_EVIDENCE.md), [observed host-specific MCP contracts](research/SUNO_MCP_TOOL_SURFACE.md).

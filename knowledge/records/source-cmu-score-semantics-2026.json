@@ -1,0 +1,16 @@
+{
+  "id": "source-cmu-score-semantics-2026",
+  "kind": "source",
+  "title": "CMU computer music: MIDI semantic compression",
+  "summary": "CMU teaching reference compares MIDI event data with score representations including ABC and MusicXML.",
+  "status": "documented",
+  "topics": [
+    "midi",
+    "notation",
+    "semantics"
+  ],
+  "url": "https://www.cs.cmu.edu/~15322/book/ch15/04.html",
+  "accessed": "2026-11-22",
+  "sources": [],
+  "relations": []
+}

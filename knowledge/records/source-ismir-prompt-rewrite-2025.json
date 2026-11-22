@@ -1,0 +1,16 @@
+{
+  "id": "source-ismir-prompt-rewrite-2025",
+  "kind": "source",
+  "title": "ISMIR 2025: retrieval-augmented music prompt rewrites",
+  "summary": "Late-breaking study reports improvements using retrieval-based prompt rewriting for Stable Audio 2.0, not Suno.",
+  "status": "documented",
+  "topics": [
+    "research",
+    "retrieval",
+    "prompts"
+  ],
+  "url": "https://ismir2025program.ismir.net/lbd_443.html",
+  "accessed": "2026-11-22",
+  "sources": [],
+  "relations": []
+}

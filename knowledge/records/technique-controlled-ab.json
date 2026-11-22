@@ -12,5 +12,62 @@
   "sources": [
     "source-reddit-v6-guide-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Run a cost-bounded comparison of one Suno production technique against a specified baseline.",
+    "requires": [
+      "Testable one-variable hypothesis",
+      "Same model, duration, generation mode and controls where possible",
+      "Authorized Suno credits and rights to source material"
+    ],
+    "inputs": [
+      "Baseline prompt and treatment prompt",
+      "Predeclared comparison metric and candidate budget"
+    ],
+    "outputs": [
+      "Requests and clip IDs linked to experimental conditions",
+      "Blind listening results and any negative outcomes"
+    ],
+    "execute": [
+      "Write a hypothesis and one variable to change.",
+      "Hold model, controls, genre, lyrics, candidate counts and references fixed unless impossible; document confounds.",
+      "Obtain a credit budget and assign random IDs to treatments.",
+      "Generate at the authorized count, inspect audio and capture blind listener feedback.",
+      "Report observations, null findings, confounds and model-specific scope; do not generalize from one pair."
+    ],
+    "matchup": {
+      "applies_when": [
+        "Two prompt strategies compete and their comparative utility is uncertain.",
+        "A production technique might depend on model or vocal genre."
+      ],
+      "avoid_when": [
+        "The provider prevents comparing conditions under the same model and this confound cannot be controlled.",
+        "No credit authorization or rights to the inputs."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Fix a maximum number of clips and credit budget before operation.",
+        "No automatic paid retries or cherry-picked exclusion of poor generations."
+      ]
+    },
+    "stop_when": [
+      "Budget exhausted, documented error, or predeclared candidate count reached.",
+      "Report inconclusive when comparisons are confounded."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "A/B receipts show model, settings and both conditions.",
+        "Human listener comparisons and failure counts are retained."
+      ],
+      "evidence": []
+    }
+  }
 }

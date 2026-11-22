@@ -12,5 +12,59 @@
   "sources": [
     "source-suno-mcp-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Prove an existing Omega can discover and perform read-only operations through Suno's official remote MCP.",
+    "requires": [
+      "OAuth-capable remote HTTP MCP client in an existing Omega runtime",
+      "Separate Suno user authorization; provider feature entitlements"
+    ],
+    "inputs": [
+      "Official remote URL https://api.suno.com/mcp",
+      "Omega version, transport details, redacted sign-in evidence"
+    ],
+    "outputs": [
+      "Documented observed tool list and grant/usage response",
+      "Sanitized integration test receipt or precise blocker"
+    ],
+    "execute": [
+      "Inspect the Omega runtime's actual supported MCP transports and auth method.",
+      "Configure the official remote MCP endpoint with no committed secrets.",
+      "Authorize through the supported user sign-in flow.",
+      "Discover operations and retrieve a read-only account/usage or library resource.",
+      "Record response, client version, allowed models, missing grants and any errors without assuming ChatGPT credentials transfer."
+    ],
+    "matchup": {
+      "applies_when": [
+        "Milestone M0 must establish Omega-originated operation.",
+        "The existing Omega runtime can connect to an official external MCP."
+      ],
+      "avoid_when": [
+        "An Omega lacks required OAuth or remote MCP transport; document blocker.",
+        "An account connection would require unsafe or copied credentials."
+      ]
+    },
+    "effects": [
+      "network-read"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "No account writes, credit spends or generation during read-only proof.",
+        "Do not store authorization tokens or session secrets."
+      ]
+    },
+    "stop_when": [
+      "An Omega-authenticated read-only operation is evidenced or a specific blocker is recorded.",
+      "Do not claim M0 completed without a real Omega call."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Capture redacted actual Omega operation with tool discovery and server reply.",
+        "The separate paid creation criterion remains open until operator approval."
+      ],
+      "evidence": []
+    }
+  }
 }

@@ -12,5 +12,63 @@
   "sources": [
     "source-reddit-v6-guide-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Create a prioritized, testable musical production brief from a listener's request instead of accumulating unrelated genre adjectives.",
+    "requires": [
+      "Human-approved musical goal",
+      "Suno model and input mode known before execution",
+      "Suno MCP authorization and credit budget only if generating audio"
+    ],
+    "inputs": [
+      "Original musical intention",
+      "Reference constraints and permissions",
+      "Known model/version"
+    ],
+    "outputs": [
+      "A concise structured producer brief",
+      "Optionally a generated song receipt and listening evaluation"
+    ],
+    "execute": [
+      "Extract the desired identity, groove, instrument roles, performance, arrangement arc and mix constraints.",
+      "Rank at most three nonnegotiable musical properties; leave unresolved choices visible.",
+      "Draft a concise Simple description or Custom style/lyrics consistent with the model's tool contract.",
+      "If authorized, generate and compare against a shorter neutral baseline without changing unrelated controls.",
+      "Record whether the resulting audio audibly satisfies the top priorities and what failed."
+    ],
+    "matchup": {
+      "applies_when": [
+        "A song needs a coherent identity, rhythm and evolving arrangement.",
+        "A prompt with too many adjectives has yielded generic or conflicting output."
+      ],
+      "avoid_when": [
+        "The user's precise melody already exists as MIDI; prefer the MIDI conditioning build.",
+        "The prompt would imitate a protected recording or lacks permission."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Do not generate without approved credit budget and account grant.",
+        "Community heuristics are hypotheses; do not report a universal optimization."
+      ]
+    },
+    "stop_when": [
+      "A brief and its ranking are recorded, or missing requirements prevent it.",
+      "Generation attempt ends at authorized candidate count or a documented provider error."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Inspect model, prompt/controls, all candidate clip IDs and blind listening outcome.",
+        "Compare measured or heard differences against a predeclared baseline."
+      ],
+      "evidence": []
+    }
+  }
 }

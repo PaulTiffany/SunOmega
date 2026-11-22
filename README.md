@@ -1,32 +1,41 @@
 # SunOmega
 
-**Agent-first Suno music production knowledge and orchestration.**
+**Shared, agent-first Suno production knowledge and orchestration.**
 
-SunOmega is an MIT-licensed project by **Paul Carver Tiffany III**. Its purpose is to build a shared, structured, inspectable body of Suno production knowledge that ChatGPT and authorized Omegas can both access. OmegaDJ, continuous music driven by voluntary audience/game feedback, is a later application.
+SunOmega is an MIT-licensed project by **Paul Carver Tiffany III**. It gives ChatGPT and authorized Omegas one inspectable source of evidence about musical production. An eventual OmegaDJ can use it for continuous music with voluntary game/participant feedback.
 
-**Status: foundation only.** Omega-to-Suno MCP connectivity has not yet been proven. No generation or DJ system is claimed to work.
+**Milestone 0 remains open:** an Omega has not yet been proven to connect to the official Suno MCP (https://api.suno.com/mcp), discover its tools, and generate a song through its own authenticated session. ChatGPT's connection does not prove that integration.
 
-## Priorities
+## Architecture — GF-style builds indexed by AtomSpace
 
-1. **M0: prove an existing Omega can use the official Suno MCP** (https://api.suno.com/mcp) with a separately authorized account, discover tools, perform read-only calls, then create a test track with explicit approval.
-2. **M1: shared knowledge base.** Source-attributed, Git-versioned JSON records; deterministic MeTTa/Hyperon AtomSpace projection; CLI and later shared MCP knowledge queries.
-3. **M2+: production tooling.** MIDI generation, audio analysis, stems, reliable transitions, prompt experiments, opt-in musical tastes, and OmegaDJ.
+- **Git + JSON records:** source-linked musical knowledge, prompt guidance, tool capabilities, and controlled experiment claims.
+- **GF production contracts:** every technique declares Target / Equip / Execute / Matchup / Proof, effects, bounds and stopping conditions. A recipe is advisory; only an explicitly linked `skills/<id>/build.json` package provides a runnable helper.
+- **MeTTa / Hyperon AtomSpace:** deterministic, queryable projection of those records, their sources, their relationships and their build contracts. Git JSON remains authoritative.
+- **Agent/host boundary:** a retrieved recipe never grants authority to authenticate, spend, upload, or publish. Tool grants and budgets are handled independently.
+- **Later music pipeline:** official Suno MCP; optional Mido/pretty_midi for score/MIDI, FFmpeg/librosa/soundfile for audio, and local playback/mixing independent of asynchronous generation.
 
-## Technology
+See [knowledge format and examples](knowledge/README.md), [architecture](docs/ARCHITECTURE.md), [MCP proof gate](docs/OMEGA_SUNO_MCP.md), [knowledge policy](docs/KNOWLEDGE_POLICY.md) and [roadmap](docs/ROADMAP.md).
 
-Python 3.11, optional Hyperon 0.2.10 / MeTTa, Git + JSON records, official remote Suno MCP. Later: mido / pretty_midi, FFmpeg, librosa, soundfile and a separate live mixer. We deliberately avoid a server database or custom learning algorithms until needed.
+## Try the knowledge base
 
-See [architecture](docs/ARCHITECTURE.md), [MCP proof](docs/OMEGA_SUNO_MCP.md), [knowledge policy](docs/KNOWLEDGE_POLICY.md), and [roadmap](docs/ROADMAP.md).
+From a Python 3.11-compatible checkout:
 
-## Start (after Python package is added)
+```bash
+python -m pip install -e ".[atomspace,midi]"
+sunomega validate
+sunomega builds
+sunomega search "breathing"
+sunomega show technique-lyric-prosody
+sunomega export-metta
+sunomega smoke-metta
+```
 
-    python -m pip install -e .
-    sunomega validate
-    sunomega search "midi"
-    sunomega export-metta
+The semantic-score-to-MIDI GF package lives in [skills/semantic-midi](skills/semantic-midi/). The research [draft PR](https://github.com/PaulTiffany/SunOmega/pull/4) introduces that package and the GF contracts; do not treat it as merged into `main` until reviewed.
 
-For real Hyperon AtomSpace queries, install the optional atomspace extra and use smoke-metta. The repository is useful to ChatGPT immediately through GitHub; a dedicated SunOmega MCP is a later interface.
+## Project milestones
 
-## Safety, ownership and rights
+M0 prove Omega → official Suno MCP with independent authorization and explicit approval for paid test generation. M1 make the shared AtomSpace-based Suno knowledge usable by both human/ChatGPT and Omega. M2 explore exact symbolic melody control and Suno MIDI adherence. Later: controlled prompt tests, stems, continuous mixing and private opt-in taste preferences.
 
-Original code and original documentation: MIT; [LICENSE](LICENSE), Copyright (c) 2026 Paul Carver Tiffany III. Linked Reddit and Suno works remain subject to their own rights, and we cite/summarize instead of republishing. Do not commit access tokens, personal biofeedback, third-party audio or unpublished origination/continual-learning research. Not affiliated with Suno or OmegaHive.
+## Licensing and boundaries
+
+Original code and docs are under [MIT](LICENSE), copyright (c) 2026 Paul Carver Tiffany III. Suno/Reddit publications retain their own copyrights; we link and summarize them. Do not commit credentials, private taste or biometric data, unlicensed audio, or unpublished origination/continual-learning research. Not affiliated with Suno or OmegaHive.

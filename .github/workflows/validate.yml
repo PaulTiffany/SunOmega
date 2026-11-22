@@ -18,6 +18,12 @@ jobs:
           python -m unittest discover -s tests -v
           sunomega export-metta > sunomega.generated.metta
           test -s sunomega.generated.metta
+          sunomega builds > /tmp/sunomega.builds.json
+          sunomega show technique-lyric-prosody > /tmp/sunomega.prosody.json
+          sunomega search "breathing" > /tmp/sunomega.breathing.json
+          python -c "import json; p=json.load(open('/tmp/sunomega.prosody.json')); assert p['build']['proof']['status']=='proposed'"
+          python -c "import json; p=json.load(open('/tmp/sunomega.breathing.json')); assert any(r['id']=='technique-lyric-prosody' for r in p)"
+
 
   atomspace:
     runs-on: ubuntu-latest
@@ -30,3 +36,19 @@ jobs:
         run: python -m pip install -e ".[atomspace]"
       - name: Load and query real AtomSpace
         run: sunomega smoke-metta
+
+  semantic-midi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install MIDI extra
+        run: python -m pip install -e ".[midi]"
+      - name: Validate authored score and MIDI round-trip
+        run: |
+          python -m unittest discover -s tests -v
+          python skills/semantic-midi/scripts/compile_melody.py skills/semantic-midi/examples/hopeful-hook.json --validate-only
+          python skills/semantic-midi/scripts/compile_melody.py skills/semantic-midi/examples/hopeful-hook.json --output /tmp/hopeful-hook.mid
+          test -s /tmp/hopeful-hook.mid

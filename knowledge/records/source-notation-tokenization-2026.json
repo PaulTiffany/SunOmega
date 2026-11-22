@@ -1,0 +1,16 @@
+{
+  "id": "source-notation-tokenization-2026",
+  "kind": "source",
+  "title": "Does Notation Matter? preprint",
+  "summary": "Research preprint compares MusicXML, MIDI and ABC representations across 26 models, not Suno.",
+  "status": "documented",
+  "topics": [
+    "musicxml",
+    "research",
+    "symbolic"
+  ],
+  "url": "https://arxiv.org/abs/2610.34247",
+  "accessed": "2026-11-22",
+  "sources": [],
+  "relations": []
+}

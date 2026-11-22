@@ -1,0 +1,16 @@
+{
+  "id": "source-mido-docs-2026",
+  "kind": "source",
+  "title": "Mido Standard MIDI File documentation",
+  "summary": "Mido documents creation/serialization of MIDI tracks and timing events.",
+  "status": "documented",
+  "topics": [
+    "midi",
+    "python",
+    "serializing"
+  ],
+  "url": "https://mido.readthedocs.io/en/stable/api.html",
+  "accessed": "2026-11-22",
+  "sources": [],
+  "relations": []
+}

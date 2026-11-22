@@ -12,5 +12,64 @@
   "sources": [
     "source-suno-midi-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Submit an original MIDI melody through the official supported Suno workflow and measure whether generated audio preserves its motif.",
+    "requires": [
+      "Authenticated official Suno MCP with user-granted MIDI upload and generation",
+      "Supported MIDI conditioning model (observed ChatGPT interface: v6-wild in Simple mode)",
+      "Operator-approved credits and original content rights"
+    ],
+    "inputs": [
+      "Original valid .mid score under provider upload limit",
+      "Musical instrumentation/feel description and full generation settings"
+    ],
+    "outputs": [
+      "MIDI upload ID and completed Suno clip IDs",
+      "Source MIDI hash, clip/analysis receipt and observed fidelity"
+    ],
+    "execute": [
+      "Verify real account grants, model label, upload size and copyright ownership before spending.",
+      "Upload the original MIDI using discovered official methods; finish any staged upload.",
+      "Use the provider's supported Simple-mode MIDI-conditioned generation, avoiding incompatible custom lyrics/style.",
+      "Poll asynchronous generation and capture clip IDs without fabricating success or duration.",
+      "Compare identifiable intervals and phrase boundaries to source score; collect blinded listener judgment."
+    ],
+    "matchup": {
+      "applies_when": [
+        "An original melody already exists and a rendered arrangement is desired.",
+        "The client advertises official MIDI conditioning and the account has required grants."
+      ],
+      "avoid_when": [
+        "Suno MIDI grant or required model is unavailable.",
+        "No rights or budget to submit the score."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Verify model and tool contract at runtime; do not assume ChatGPT connector grants transfer.",
+        "Approve maximum credits and candidate count first; no automatic paid retry."
+      ]
+    },
+    "stop_when": [
+      "A finished linked clip and fidelity assessment are recorded, or a precise permission/upload error ends work.",
+      "Do not claim exact MIDI adherence from provider job completion alone."
+    ],
+    "proof": {
+      "status": "provider-documented",
+      "checks": [
+        "Record source MIDI hash, tool parameters, provider statuses and final clip IDs.",
+        "Use independent musical and listener checks, including failed notes and skipped conditions."
+      ],
+      "evidence": [
+        "https://help.suno.com/en/articles/14594177"
+      ]
+    }
+  }
 }

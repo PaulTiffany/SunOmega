@@ -12,5 +12,60 @@
   "sources": [
     "source-reddit-v6-guide-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Prevent agents from treating prose instructions such as exact BPM, bars or bracket tags as deterministic music commands.",
+    "requires": [
+      "Suno model/mode documented",
+      "An exact target tempo, duration, or transition requirement"
+    ],
+    "inputs": [
+      "Original text brief",
+      "Desired hard constraints and allowed tolerance"
+    ],
+    "outputs": [
+      "Separated soft Suno guidance and locally enforceable hard constraints",
+      "A verification plan for any claimed timing"
+    ],
+    "execute": [
+      "Classify each target as a provider-guaranteed setting, soft request or local engineering requirement.",
+      "Use official tool parameter when available, not fictional prompt syntax.",
+      "Produce local timing/MIDI or DAW plan for requirements that must be exact.",
+      "If authorized, generate once and analyze beat/section timing against tolerances.",
+      "Report deviation; avoid claiming exact adherence from a prompt alone."
+    ],
+    "matchup": {
+      "applies_when": [
+        "An exact tempo, measure count, synchronized cue or structure matters.",
+        "Prompts include unverified bracket commands."
+      ],
+      "avoid_when": [
+        "The selected provider guarantees the exact required operation and its documented constraints suffice."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Never claim hard timing from untested prose.",
+        "No credit spend without authorization; do not fabricate control support."
+      ]
+    },
+    "stop_when": [
+      "Hard-vs-soft specification is documented.",
+      "The bounded test either meets tolerance or records failure."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Inspect provider tool settings, timing-map uncertainty and measured output.",
+        "Retain examples where exact numeric prose was ignored."
+      ],
+      "evidence": []
+    }
+  }
 }

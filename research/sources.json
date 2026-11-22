@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "id": "S1",
+      "publisher": "Suno",
+      "evidence_class": "official",
+      "published_or_updated": "2026-11-18",
+      "claim_scope": "Suno MCP setup, endpoint and OAuth-style authorization",
+      "url": "https://help.suno.com/en/articles/14551425",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S2",
+      "publisher": "Suno",
+      "evidence_class": "official",
+      "published_or_updated": "2026-11-18",
+      "claim_scope": "MCP across plans, credits and authorization",
+      "url": "https://help.suno.com/en/articles/14486145",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S3",
+      "publisher": "Suno",
+      "evidence_class": "official",
+      "published_or_updated": "2026-09-09",
+      "claim_scope": "v6 variants, model plan scope and tool family",
+      "url": "https://help.suno.com/en/articles/13924801",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S4",
+      "publisher": "Suno",
+      "evidence_class": "official",
+      "published_or_updated": "2026-09-09",
+      "claim_scope": "v6 Simple Mode references, Variety, Max Mode, edit features",
+      "url": "https://help.suno.com/en/articles/13924481",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S5",
+      "publisher": "Suno",
+      "evidence_class": "official",
+      "published_or_updated": "2026-11-04",
+      "claim_scope": "Desktop MIDI upload in Simple Create with paid plan scope",
+      "url": "https://help.suno.com/en/articles/14594177",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S6",
+      "publisher": "Suno",
+      "evidence_class": "official",
+      "published_or_updated": "2026-09-09",
+      "claim_scope": "Suno stem separation and credit modes",
+      "url": "https://help.suno.com/en/articles/13925185",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S7",
+      "publisher": "Suno",
+      "evidence_class": "official",
+      "published_or_updated": "2026-03-26",
+      "claim_scope": "My Taste personalization already exists",
+      "url": "https://help.suno.com/en/articles/11362561",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S8",
+      "publisher": "r/SunoAI community post",
+      "evidence_class": "community-hypothesis",
+      "published_or_updated": "2026-09",
+      "claim_scope": "Compiled v6 prompt architecture, caveats, and troubleshooting",
+      "url": "https://www.reddit.com/r/SunoAI/comments/1wehqi9/suno_v6_prompting_guide_compiled_from_your_reddit/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S9",
+      "publisher": "r/SunoAI community post",
+      "evidence_class": "community-hypothesis",
+      "published_or_updated": "2026-09",
+      "claim_scope": "First-person v6 problems and prompt heuristics",
+      "url": "https://www.reddit.com/r/SunoAI/comments/1wcyryw/unofficial_suno_v6_prompting_guide_what_has_been/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S10",
+      "publisher": "Poltronieri et al.",
+      "evidence_class": "research-preprint",
+      "published_or_updated": "2026-10-25",
+      "claim_scope": "MusicXML vs MIDI and ABC tokenizations across 26 models; does not evaluate Suno",
+      "url": "https://arxiv.org/abs/2610.34247",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S11",
+      "publisher": "Huang et al., ISMIR",
+      "evidence_class": "research-conference",
+      "published_or_updated": "2025",
+      "claim_scope": "Text-to-music metrics and human preferences; not a Suno-specific benchmark",
+      "url": "https://ismir2025program.ismir.net/poster_314.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S12",
+      "publisher": "Ding et al., ISMIR LBD",
+      "evidence_class": "research-conference",
+      "published_or_updated": "2025",
+      "claim_scope": "Retrieval-augmented text-to-music prompt rewriting tested with Stable Audio 2.0, not Suno",
+      "url": "https://ismir2025program.ismir.net/lbd_443.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S13",
+      "publisher": "Chris Donahue / CMU",
+      "evidence_class": "academic-teaching",
+      "published_or_updated": "2026",
+      "claim_scope": "MIDI's event semantics vs score formats (ABC/MusicXML)",
+      "url": "https://www.cs.cmu.edu/~15322/book/ch15/04.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S14",
+      "publisher": "music21 documentation",
+      "evidence_class": "software-documentation",
+      "published_or_updated": "accessed-2026-11-22",
+      "claim_scope": "Import/export MIDI and MusicXML; latest music21 may require Python 3.12",
+      "url": "https://music21.org/music21docs/usersGuide/usersGuide_08_installingMusicXML.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "S15",
+      "publisher": "Mido documentation",
+      "evidence_class": "software-documentation",
+      "published_or_updated": "accessed-2026-11-22",
+      "claim_scope": "Standard MIDI File writing and exact timing helpers",
+      "url": "https://mido.readthedocs.io/en/stable/api.html",
+      "accessed": "2026-11-22"
+    }
+  ]
+}

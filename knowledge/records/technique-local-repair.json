@@ -12,5 +12,62 @@
   "sources": [
     "source-reddit-v6-guide-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Preserve successful portions of an original track while testing a targeted fix for a weak section.",
+    "requires": [
+      "Authorized source song and Suno editing/extension tools",
+      "Song section boundary or failure region",
+      "Explicit credit approval for regeneration"
+    ],
+    "inputs": [
+      "Existing Suno clip ID and rights",
+      "Specific fault: rushed chorus, missing instrument, poor outro"
+    ],
+    "outputs": [
+      "A reviewable repair plan with minimal changed region",
+      "Provider edit/extension receipts and listening comparison when authorized"
+    ],
+    "execute": [
+      "Inspect the track and describe one defect with approximate location.",
+      "Check available official edit, extension, mashup or source-reference operations and prerequisites.",
+      "Prefer the smallest supported operation that can address the defect; document why.",
+      "Request authorization for any billable operation, capture original and revised clip IDs.",
+      "Compare unchanged sections, audible artifacts and target improvement; retain originals."
+    ],
+    "matchup": {
+      "applies_when": [
+        "A track has strong parts worth preserving.",
+        "An ending or one section fails while the rest succeeds."
+      ],
+      "avoid_when": [
+        "There is no supported targeted editing operation in the current account.",
+        "The source material cannot legally be edited or remixed."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "No paid retries without bounded budget.",
+        "Do not assume source clip permission from its public URL."
+      ]
+    },
+    "stop_when": [
+      "One narrowly scoped repair is evaluated, or blocked by unavailable rights/feature.",
+      "Stop if repeated revisions damage previously correct sections."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Listen to altered and untouched regions to detect unrequested changes.",
+        "Link resulting clip IDs and negatives to the original."
+      ],
+      "evidence": []
+    }
+  }
 }

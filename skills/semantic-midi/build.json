@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "id": "semantic-midi",
+  "summary": "Compile an explicitly authored, bounded monophonic semantic score into a reproducible MIDI file.",
+  "skill": "SKILL.md",
+  "entrypoint": "scripts/compile_melody.py",
+  "license": "LICENSE",
+  "requires": [
+    "Python 3.11 or 3.12",
+    "Mido >=1.3 for MIDI export; standard library for validation",
+    "A writable local path; no network or Suno credentials"
+  ],
+  "inputs": [
+    "One v0 score JSON with explicit notes and human-authored intent, up to 64 KiB",
+    "An optional expected destination for MIDI"
+  ],
+  "outputs": [
+    "Standard MIDI Format 0 file with exact validated notes and tempo/meter",
+    "JSON receipt with input/output hashes, note count, range, duration and rest"
+  ],
+  "effects": [
+    "local-read",
+    "local-write"
+  ],
+  "bounds": {
+    "enforced": [
+      "1–16 bars, 1–128 monophonic notes, tempo 40–240 BPM",
+      "Exact 480 ticks/quarter note fractions; no hidden quantization",
+      "Only major or natural minor, no chromatic alterations/polyphony",
+      "Score max 64KiB, destination must be .mid",
+      "Existing output with different content cannot be replaced",
+      "Reject unsupported fields, overlapping notes, failed constraints"
+    ],
+    "operator": [
+      "User/agent supplies explicit notes and owns creative interpretation",
+      "No upload, Suno generation, credit use or third-party copying",
+      "MIDI correctness does not imply Suno audio or listener fidelity"
+    ]
+  },
+  "stop_when": [
+    "Score is rejected with a specific error",
+    "Valid MIDI and receipt are written or identical existing MIDI is verified",
+    "Required Mido dependency is not installed; do not invent an output file"
+  ],
+  "evidence": [
+    "references/evidence.md"
+  ]
+}

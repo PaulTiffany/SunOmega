@@ -1,0 +1,84 @@
+{
+  "id": "technique-semantic-score-layer",
+  "kind": "technique",
+  "title": "Preserve musical intent and symbolic score separately from MIDI",
+  "summary": "Proposed SunOmega design motivated by the richer notation-vs-MIDI distinction. A semantic score can retain phrase-level intent while exact event fields compile to MIDI; user/audio value requires testing.",
+  "status": "hypothesis",
+  "topics": [
+    "midi",
+    "notation",
+    "semantic-score",
+    "composition"
+  ],
+  "sources": [
+    "source-notation-tokenization-2026",
+    "source-cmu-score-semantics-2026"
+  ],
+  "relations": [
+    {
+      "predicate": "depends-on",
+      "target": "capability-semantic-midi"
+    }
+  ],
+  "build": {
+    "target": "Translate a human melody brief into explicit, inspectable score events that a deterministic helper can compile to MIDI.",
+    "requires": [
+      "Python 3.11+",
+      "GF-style semantic MIDI build and Mido for export"
+    ],
+    "inputs": [
+      "Human musical intent",
+      "A complete original score with meter, tonic, mode, exact onset/duration and pitches"
+    ],
+    "outputs": [
+      "Validated semantic score",
+      "MIDI file with exact-event receipt when compiled"
+    ],
+    "execute": [
+      "Let the composing model propose concrete note events; retain the higher-level phrase intention as unexecuted metadata.",
+      "Validate the note schedule, pitch range, constraints, rests and ownership through the semantic-midi helper.",
+      "Reject ambiguity or impossible constraints; do not invent missing pitches.",
+      "Export MIDI and compare notes/timing by independent round-trip reader.",
+      "Test separately whether Suno conditioning preserves the motif under authorized generation."
+    ],
+    "matchup": {
+      "applies_when": [
+        "Agent must control a melody more precisely than a text-only style prompt.",
+        "An original, bounded monophonic motif or hook is needed."
+      ],
+      "avoid_when": [
+        "Complex polyphony, chromaticism or modulation exceeds v0 helper limits.",
+        "The agent only has prose and no permission to resolve missing notes."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "local-write"
+    ],
+    "bounds": {
+      "enforced": [
+        "Monophonic 1–16 bars and 1–128 notes, bounded rational timing and exact 480 PPQN",
+        "No overwrite of different existing MIDI bytes"
+      ],
+      "operator": [
+        "Compiler proves source-to-MIDI mapping only.",
+        "No Suno upload, credit use or external account action in this build."
+      ]
+    },
+    "stop_when": [
+      "Valid original MIDI exists with verified event receipt, or the score is rejected.",
+      "No hidden musical inference or auto-quantization."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Use deterministic Mido note-on/off round trip and SHA-256 reproducibility.",
+        "Separately collect provider and listener evidence before claiming fidelity.",
+        "The semantic-score technique as an aid to composition still needs user and Suno fidelity experiments; local compiler tests do not prove that proposition."
+      ],
+      "evidence": [
+        "https://github.com/PaulTiffany/SunOmega/actions/runs/45062641951"
+      ]
+    }
+  }
+}

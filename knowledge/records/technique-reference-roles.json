@@ -17,5 +17,63 @@
       "predicate": "refines",
       "target": "technique-producer-brief"
     }
-  ]
+  ],
+  "build": {
+    "target": "Use eligible reference audio to guide one declared musical characteristic rather than an unspecified blend.",
+    "requires": [
+      "Rights and account access to each reference",
+      "Official reference-conditioning grant",
+      "Authorized credits if generating"
+    ],
+    "inputs": [
+      "Owned or permitted reference clip IDs",
+      "Declared desired role per reference"
+    ],
+    "outputs": [
+      "Reference-role plan",
+      "Audition receipt with reference-to-output trace"
+    ],
+    "execute": [
+      "Confirm each reference is eligible in the current client's official tool contract.",
+      "Assign one target property per reference: texture, rhythm, vocal style, or harmonic color.",
+      "Draft a brief that explains the intended reference relationship without asking to reproduce protected material.",
+      "Generate only within approved bounds; compare output against desired characteristics.",
+      "Document what the result preserved and what drifted; do not claim exact reference copying."
+    ],
+    "matchup": {
+      "applies_when": [
+        "Several source tracks have distinct complementary qualities.",
+        "User explicitly authorizes reference-based transformations."
+      ],
+      "avoid_when": [
+        "Reference rights are unclear.",
+        "There is no reference feature in the current client's account."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Never upload or reuse unlicensed third-party audio.",
+        "Budget at most the approved number of candidates."
+      ]
+    },
+    "stop_when": [
+      "Permissions and roles are confirmed, or the attempt is stopped.",
+      "Stop after a bounded comparison without speculative retries."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Record actual eligible source IDs and reference controls.",
+        "Human listening establishes whether each desired property is perceivable."
+      ],
+      "evidence": []
+    }
+  }
 }

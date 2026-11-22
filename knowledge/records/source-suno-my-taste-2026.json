@@ -1,0 +1,16 @@
+{
+  "id": "source-suno-my-taste-2026",
+  "kind": "source",
+  "title": "Suno official: My Taste",
+  "summary": "Official documentation that Suno already personalizes style guidance to user tastes.",
+  "status": "primary-documentation",
+  "topics": [
+    "suno",
+    "personalization",
+    "taste"
+  ],
+  "url": "https://help.suno.com/en/articles/11362561",
+  "accessed": "2026-11-22",
+  "sources": [],
+  "relations": []
+}
