@@ -13,5 +13,65 @@
   "sources": [
     "source-suno-stems-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Produce an eligible owned clip's separated instrumental parts to test stem-based musical continuity.",
+    "requires": [
+      "Signed-in user owns or may access the source clip",
+      "Official stems grant, enough user-approved credits",
+      "Audio retrieval and a local mixer for continuity tests"
+    ],
+    "inputs": [
+      "Completed source clip ID and requested split mode (two or twelve)",
+      "Operator-approved spend limit"
+    ],
+    "outputs": [
+      "Stem group and returned clip IDs with completion status",
+      "Candidate isolated drum or instrumental bridge for local inspection"
+    ],
+    "execute": [
+      "Check that the source clip is complete and that account grants permit stems.",
+      "Estimate feature-specific credit cost from live server description; obtain explicit approval.",
+      "Request the narrowest supported stem split, with idempotent retry key if provided.",
+      "Poll the stem group until terminal status and record partial failures.",
+      "Inspect isolated parts and report artifacts; use local mixing for DJ transitions instead of assuming generation will be immediate."
+    ],
+    "matchup": {
+      "applies_when": [
+        "A drum/instrumental bridge is needed between authorized songs.",
+        "The source audio is owned and eligible under current Suno plan."
+      ],
+      "avoid_when": [
+        "The source clip is not finished or not authorized for stem splitting.",
+        "The plan lacks required feature or the cost exceeds approved budget."
+      ]
+    },
+    "effects": [
+      "network-read",
+      "network-write",
+      "spend",
+      "local-write"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Respect provider-specific costs and do not assume every part exists.",
+        "Stems may be delayed or partial; keep playback independent of generation."
+      ]
+    },
+    "stop_when": [
+      "Stem group reaches complete/partial/error with a documented receipt.",
+      "Stop on permission, quota or budget failure."
+    ],
+    "proof": {
+      "status": "provider-documented",
+      "checks": [
+        "Link each stem ID and inspect audible isolation artifacts.",
+        "A completed split does not establish a seamless DJ transition."
+      ],
+      "evidence": [
+        "https://help.suno.com/en/articles/13925185"
+      ]
+    }
+  }
 }
