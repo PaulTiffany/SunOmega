@@ -5,6 +5,8 @@ import json
 import re
 from pathlib import Path
 
+from .builds import build_metta, validate_build
+
 KINDS = {"source", "capability", "technique", "experiment", "preference"}
 STATUSES = {"primary-documentation", "documented", "hypothesis", "tested", "contradicted", "deprecated"}
 PREDICATES = {"supports", "contradicts", "refines", "depends-on", "enables", "addresses"}
@@ -61,6 +63,10 @@ def validate_records(records: list[dict]) -> None:
         for relation in record["relations"]:
             if not isinstance(relation, dict) or relation.get("predicate") not in PREDICATES or not isinstance(relation.get("target"), str):
                 raise ValueError(f"{rid}: invalid relation")
+        if "build" in record:
+            if record["kind"] not in {"capability", "technique"}:
+                raise ValueError(f"{rid}: only capability or technique records can have a build")
+            validate_build(record["build"], rid)
         # GF-style executable capability link: explicit relative package path, not execution.
         if "build_path" in record:
             if record["kind"] != "capability" or not isinstance(record["build_path"], str) or not re.fullmatch(r"skills/[a-z0-9-]+/build\.json", record["build_path"]):
@@ -94,6 +100,7 @@ def to_metta(records: list[dict]) -> str:
             lines.append(f"(Accessed {rid} {q(r['accessed'])})")
         if "build_path" in r:
             lines.append(f"(BuildPath {rid} {q(r['build_path'])})")
+        lines.extend(build_metta(r))
         for edge in r["relations"]:
             lines.append(f"(Relation {rid} {q(edge['predicate'])} {q(edge['target'])})")
     return "\n".join(lines) + "\n"
