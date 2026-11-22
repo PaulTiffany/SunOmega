@@ -1,0 +1,22 @@
+{
+  "id": "technique-human-listening-gate",
+  "kind": "technique",
+  "title": "Use blind listener judgments alongside audio metrics",
+  "summary": "Research shows automatic text-to-music metrics can correlate poorly with human preference. Technical fidelity measures alone cannot establish aesthetic success; predeclare listening comparisons.",
+  "status": "hypothesis",
+  "topics": [
+    "evaluation",
+    "listening",
+    "quality",
+    "experiments"
+  ],
+  "sources": [
+    "source-ismir-audio-evaluation-2025"
+  ],
+  "relations": [
+    {
+      "predicate": "refines",
+      "target": "technique-controlled-ab"
+    }
+  ]
+}
