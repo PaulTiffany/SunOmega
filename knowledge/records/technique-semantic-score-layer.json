@@ -1,0 +1,23 @@
+{
+  "id": "technique-semantic-score-layer",
+  "kind": "technique",
+  "title": "Preserve musical intent and symbolic score separately from MIDI",
+  "summary": "Proposed SunOmega design motivated by the richer notation-vs-MIDI distinction. A semantic score can retain phrase-level intent while exact event fields compile to MIDI; user/audio value requires testing.",
+  "status": "hypothesis",
+  "topics": [
+    "midi",
+    "notation",
+    "semantic-score",
+    "composition"
+  ],
+  "sources": [
+    "source-notation-tokenization-2026",
+    "source-cmu-score-semantics-2026"
+  ],
+  "relations": [
+    {
+      "predicate": "depends-on",
+      "target": "capability-semantic-midi"
+    }
+  ]
+}
