@@ -17,5 +17,61 @@
       "predicate": "refines",
       "target": "technique-producer-brief"
     }
-  ]
+  ],
+  "build": {
+    "target": "Replace vague instrumentation lists with audible roles for each featured instrument.",
+    "requires": [
+      "Musical style or arrangement goal",
+      "Known instrument list and arrangement context"
+    ],
+    "inputs": [
+      "Desired lead, bass, rhythm and counterpoint interactions",
+      "Song brief or musical score"
+    ],
+    "outputs": [
+      "A prioritized instrument-role map",
+      "Optional controlled listening comparison"
+    ],
+    "execute": [
+      "Identify lead, supporting harmony, rhythmic propulsion, bass support and counterlines.",
+      "Describe instrument actions and interaction over time rather than listing instruments alone.",
+      "Reduce role conflicts and avoid specifying instruments that should not be audible.",
+      "If authorized, A/B test role language against an instrument-list baseline.",
+      "Record observed instrument presence and interplay; report missing roles."
+    ],
+    "matchup": {
+      "applies_when": [
+        "A song has all requested instruments but sounds cluttered.",
+        "Instrument lists yield ambiguous or generic arrangements."
+      ],
+      "avoid_when": [
+        "An instrumental role is irrelevant to a solo unaccompanied recording.",
+        "The source is fixed audio where no generation controls exist."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Changing words is not an enforceable instrumentation constraint.",
+        "For provider tests require approved credit cap."
+      ]
+    },
+    "stop_when": [
+      "Role map is produced or a bounded audition completes.",
+      "Do not retry indefinitely for a perfect arrangement."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Listener identifies whether requested parts and interactions are audible.",
+        "Compare results under the same model and conditions."
+      ],
+      "evidence": []
+    }
+  }
 }
