@@ -1,0 +1,17 @@
+{
+  "id": "capability-suno-models",
+  "kind": "capability",
+  "title": "Suno v6 model variants",
+  "summary": "Official docs distinguish v6 balanced, v6-wild exploratory, and v6-mini fast/all-plan versions. Availability and actual MCP model grants must be checked at execution.",
+  "status": "documented",
+  "topics": [
+    "suno",
+    "v6",
+    "models",
+    "grants"
+  ],
+  "sources": [
+    "source-suno-v6-models-2026"
+  ],
+  "relations": []
+}
