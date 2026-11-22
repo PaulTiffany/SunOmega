@@ -13,5 +13,62 @@
   "sources": [
     "source-reddit-v6-guide-2026"
   ],
-  "relations": []
+  "relations": [],
+  "build": {
+    "target": "Investigate whether deliberate syllable lengths, repetition and pauses improve rushed vocal phrasing in an original song.",
+    "requires": [
+      "Owned lyrics with right to alter",
+      "Same Suno model, generation mode and other controls for compared takes",
+      "Suno credit approval for actual generations"
+    ],
+    "inputs": [
+      "Target verse/chorus lyrics",
+      "Observed problem: rushing, breathlessness or repetition"
+    ],
+    "outputs": [
+      "Two prosodic lyric alternatives with a change log",
+      "Bounded matched Suno evaluation receipt"
+    ],
+    "execute": [
+      "Mark suspected crowded lines and natural breath positions.",
+      "Prepare one variant with shorter/simpler phrases and one baseline, preserving meaning and style.",
+      "Keep the Suno prompt/controls stable and change only the nominated prosodic variable.",
+      "Generate at the approved candidate count, randomize audition order and record actual sung timing.",
+      "Document any improvement, regression or inability to interpret."
+    ],
+    "matchup": {
+      "applies_when": [
+        "Vocals rush across line breaks or lack breathing space.",
+        "Melody interacts awkwardly with long or dense lines."
+      ],
+      "avoid_when": [
+        "Instrumental-only pieces.",
+        "A change to prosody would overwrite the user's deliberately fixed lyrics."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "network-write",
+      "spend"
+    ],
+    "bounds": {
+      "enforced": [],
+      "operator": [
+        "Do not change copyrighted third-party lyrics.",
+        "Budget candidate count in advance; no iterative spend without renewed authority."
+      ]
+    },
+    "stop_when": [
+      "Prosody variants and evaluation method are recorded.",
+      "A fixed budget or feature/permission error terminates trial."
+    ],
+    "proof": {
+      "status": "proposed",
+      "checks": [
+        "Measure approximate syllables per audible second and listener-reported breathing naturalness.",
+        "Keep null or worse outcomes as negative evidence."
+      ],
+      "evidence": []
+    }
+  }
 }
