@@ -1,11 +1,17 @@
-# Knowledge policy
+# Knowledge admission, evidence and GF-style build contracts
 
-Records in knowledge/records are small, typed, source-attributed facts or proposals. Never copy full source articles into the MIT repository.
+Every `knowledge/records/*.json` file is a versioned, source-attributed fact or proposal. The top-level fields are `id`, `kind`, `title`, `summary`, `status`, `topics`, `sources` and `relations`; source records also require `url` and `accessed`.
 
-**Required fields:** id, kind, title, summary, status, topics, sources, relations. A source record also requires url and accessed. Non-source records must link to source IDs. Allowed kinds: source, capability, technique, experiment, preference.
+**Records are not commands.** Every `technique` must carry a validated `build` object with `target`, `requires`, `inputs`, `outputs`, `execute`, `matchup`, `effects`, `bounds`, `stop_when` and `proof`. A `capability` may carry the same contract; if it references an executable GF helper with `build_path`, it must have a contract too.
 
-**Trust:** official provider documentation is evidence for supported features; community posts are *hypotheses*, not official syntax or guarantees; experiments report scope, settings, model, observations, negative results and confidence. Contradictions should stay explicit, not be silently replaced. A single successful generation does not demonstrate causal effects.
+Contract metadata is for inspecting requirements and planning an authorized action. It neither installs tools nor grants permissions. `effects` names possible impact (`local-read`, `local-write`, `network-read`, `network-write`, `account-write`, `spend`). `bounds.enforced` must include only limits checked by code. `bounds.operator` identifies constraints that require human/host enforcement. `stop_when` must preclude unbounded paid retries.
 
-**Privacy and rights:** no keys or secrets, no unconsented personal tastes/biometrics, no copyrighted third-party audio or full source text. Keep private taste profiles separate from the public repository. Preserve links, source dates, model version and rights. Human review is required before promoting hypotheses to tested guidance.
+**Evidence** is explicitly scoped. `build.proof.status` is one of `proposed`, `provider-documented`, `locally-tested`, `provider-tested`, `listener-observed`. Tested statuses require a visible evidence link. These are distinct types of evidence: provider documentation is not an integration test; source-to-MIDI fidelity does not establish rendered Suno melody fidelity, and either does not prove audience satisfaction. Do not promote an anecdote to tested simply by adding more prose.
 
-**Knowledge query examples:** Which MIDI workflows are officially supported? What evidence supports lyric prosody changes? Which approaches failed in experiments? What source and model version justify this recommendation?
+**Trust:** vendor docs support provider capabilities and documented grants. Community Reddit prompt advice is a source of hypotheses. Controlled experiments preserve model, full settings, prompt/score hashes, candidate IDs, failures, and human judgments. Model-specific claims should never become universal best practices. Record contradictions explicitly.
+
+**Rights and privacy:** original SunOmega text/code may be MIT licensed; third-party sources and audio retain separate rights. Link and summarize rather than reproduce a full prompt guide. Never store credentials, personal listener profiles, individual biofeedback, third-party recordings without consent, or unpublished origination/continual-learning mechanisms in this public repository.
+
+## Example retrieval
+
+An agent asked “our singer races through the chorus” should find `technique-lyric-prosody`, inspect the GF `matchup`, read its Reddit source and `proposed` evidence status, and prepare an A/B plan. It should not call Suno or spend credits merely because the `execute` list contains a generation step. `sunomega show technique-lyric-prosody` reveals the full contract; `sunomega export-metta` provides graph matching and provenance traversal.
