@@ -1,0 +1,23 @@
+{
+  "id": "technique-retrieval-producer-brief",
+  "kind": "technique",
+  "title": "Retrieve relevant production guidance before rewriting prompts",
+  "summary": "Research found benefits of retrieval-augmented text-to-music prompt rewriting on Stable Audio 2.0; treat transfer to Suno as an untested hypothesis. Retrieve source-linked guidance and preserve user intention.",
+  "status": "hypothesis",
+  "topics": [
+    "retrieval",
+    "prompts",
+    "suno",
+    "production"
+  ],
+  "sources": [
+    "source-ismir-prompt-rewrite-2025",
+    "source-reddit-v6-guide-2026"
+  ],
+  "relations": [
+    {
+      "predicate": "refines",
+      "target": "technique-producer-brief"
+    }
+  ]
+}
