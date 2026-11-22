@@ -1,0 +1,16 @@
+{
+  "id": "source-suno-v6-faq-2026",
+  "kind": "source",
+  "title": "Suno official: v6 FAQ",
+  "summary": "Official Simple Mode, multimodal references, Variety and model differences.",
+  "status": "primary-documentation",
+  "topics": [
+    "suno",
+    "prompts",
+    "v6"
+  ],
+  "url": "https://help.suno.com/en/articles/13924481",
+  "accessed": "2026-11-22",
+  "sources": [],
+  "relations": []
+}
