@@ -87,6 +87,39 @@ def build_metta(record: dict) -> list[str]:
     return facts
 
 
+def validate_package_links(records: list[dict], records_dir: object) -> None:
+    """Check a GF skill's declaration and package-local files without invoking it."""
+    from pathlib import Path
+    root = Path(records_dir).resolve().parent.parent
+    for record in records:
+        if "build_path" not in record:
+            continue
+        rid = record["id"]
+        manifest_path = root / record["build_path"]
+        if not manifest_path.is_file():
+            raise ValueError(f"{rid}: missing build manifest {record['build_path']}")
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ValueError(f"{rid}: invalid GF build manifest") from exc
+        if not isinstance(manifest, dict) or manifest.get("id") != manifest_path.parent.name:
+            raise ValueError(f"{rid}: GF manifest id must match package directory")
+        for field in ("skill", "entrypoint", "license"):
+            path = manifest.get(field)
+            if not isinstance(path, str) or not path or path.startswith("/") or ".." in path.split("/"):
+                raise ValueError(f"{rid}: unsafe GF {field} path")
+            if not (manifest_path.parent / path).is_file():
+                raise ValueError(f"{rid}: missing GF package file {field}: {path}")
+        references = manifest.get("evidence")
+        if not isinstance(references, list) or not references:
+            raise ValueError(f"{rid}: GF manifest has no evidence files")
+        for path in references:
+            if not isinstance(path, str) or path.startswith("/") or ".." in path.split("/"):
+                raise ValueError(f"{rid}: unsafe GF evidence path")
+            if not (manifest_path.parent / path).is_file():
+                raise ValueError(f"{rid}: missing GF evidence file: {path}")
+
+
 def searchable_text(record: dict) -> str:
     """A simple retrieval baseline including procedural fields; not semantic search."""
     parts = [record["id"], record["title"], record["summary"], *record["topics"]]
