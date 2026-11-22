@@ -1,0 +1,24 @@
+{
+  "id": "capability-semantic-midi",
+  "kind": "capability",
+  "title": "Compile an authored semantic score to exact MIDI",
+  "summary": "GF-style local build: validates a bounded monophonic score and serializes MIDI with reproducible note/timing/hash receipts. CI validates compiler behavior only; not Suno conditioning, artistic intent or listener preference.",
+  "status": "tested",
+  "topics": [
+    "midi",
+    "build",
+    "semantic-score",
+    "python"
+  ],
+  "sources": [
+    "source-mido-docs-2026",
+    "source-cmu-score-semantics-2026"
+  ],
+  "relations": [
+    {
+      "predicate": "enables",
+      "target": "capability-midi-create"
+    }
+  ],
+  "build_path": "skills/semantic-midi/build.json"
+}
