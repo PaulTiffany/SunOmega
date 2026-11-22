@@ -1,0 +1,126 @@
+{
+  "schema": "sunomega.semantic-melody.v0",
+  "title": "Original Four-Bar D-Minor Hook",
+  "intent": "A rising call, recognizable midphrase repetition, a held high note, then a gentle descending answer. Half-beat breath before the response.",
+  "tonic": "D",
+  "mode": "natural_minor",
+  "tempo_bpm": 104,
+  "meter": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "bars": 4,
+  "phrases": [
+    {
+      "name": "call",
+      "start": "0",
+      "end": "8",
+      "intent": "Ascend, repeat a small idea and allow a short breath."
+    },
+    {
+      "name": "answer",
+      "start": "8",
+      "end": "16",
+      "intent": "Leap to a held peak, then step downward toward home."
+    }
+  ],
+  "notes": [
+    {
+      "start": "0",
+      "duration": "1",
+      "degree": 1,
+      "octave": 4,
+      "velocity": 82
+    },
+    {
+      "start": "1",
+      "duration": "1",
+      "degree": 3,
+      "octave": 4,
+      "velocity": 86
+    },
+    {
+      "start": "2",
+      "duration": "2",
+      "degree": 5,
+      "octave": 4,
+      "velocity": 93
+    },
+    {
+      "start": "4",
+      "duration": "1",
+      "degree": 3,
+      "octave": 4,
+      "velocity": 79
+    },
+    {
+      "start": "5",
+      "duration": "1",
+      "degree": 5,
+      "octave": 4,
+      "velocity": 89
+    },
+    {
+      "start": "6",
+      "duration": "3/2",
+      "degree": 6,
+      "octave": 4,
+      "velocity": 92
+    },
+    {
+      "start": "8",
+      "duration": "1",
+      "degree": 5,
+      "octave": 4,
+      "velocity": 94
+    },
+    {
+      "start": "9",
+      "duration": "1",
+      "degree": 7,
+      "octave": 4,
+      "velocity": 98
+    },
+    {
+      "start": "10",
+      "duration": "2",
+      "degree": 1,
+      "octave": 5,
+      "velocity": 108
+    },
+    {
+      "start": "12",
+      "duration": "1",
+      "degree": 7,
+      "octave": 4,
+      "velocity": 92
+    },
+    {
+      "start": "13",
+      "duration": "1",
+      "degree": 5,
+      "octave": 4,
+      "velocity": 86
+    },
+    {
+      "start": "14",
+      "duration": "1",
+      "degree": 3,
+      "octave": 4,
+      "velocity": 81
+    },
+    {
+      "start": "15",
+      "duration": "1",
+      "degree": 1,
+      "octave": 4,
+      "velocity": 75
+    }
+  ],
+  "constraints": {
+    "first_degree": 1,
+    "last_degree": 1,
+    "max_leap_semitones": 12,
+    "min_total_rest_beats": "1/2"
+  }
+}
