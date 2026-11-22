@@ -1,0 +1,16 @@
+{
+  "id": "capability-suno-my-taste",
+  "kind": "capability",
+  "title": "Suno already supports My Taste personalization",
+  "summary": "Suno offers built-in preference-informed style augmentation. A future OmegaDJ personalized playlist must demonstrate additional value beyond the existing feature.",
+  "status": "documented",
+  "topics": [
+    "taste",
+    "suno",
+    "personalization"
+  ],
+  "sources": [
+    "source-suno-my-taste-2026"
+  ],
+  "relations": []
+}
