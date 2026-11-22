@@ -1,0 +1,16 @@
+{
+  "id": "source-ismir-audio-evaluation-2025",
+  "kind": "source",
+  "title": "ISMIR 2025: aligning text-to-music metrics with preference",
+  "summary": "Study reports limitations of popular automatic metrics relative to musical desiderata and listener preferences.",
+  "status": "documented",
+  "topics": [
+    "research",
+    "evaluation",
+    "listening"
+  ],
+  "url": "https://ismir2025program.ismir.net/poster_314.html",
+  "accessed": "2026-11-22",
+  "sources": [],
+  "relations": []
+}
