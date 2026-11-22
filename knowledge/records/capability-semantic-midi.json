@@ -20,5 +20,63 @@
       "target": "capability-midi-create"
     }
   ],
-  "build_path": "skills/semantic-midi/build.json"
+  "build_path": "skills/semantic-midi/build.json",
+  "build": {
+    "target": "Export a validated original monophonic melody as reproducible Standard MIDI with a source-to-events receipt.",
+    "requires": [
+      "Python 3.11 and local filesystem",
+      "mido for final MIDI serialization; included script and original score JSON"
+    ],
+    "inputs": [
+      "Explicit score JSON with pitches, timing, rests and constraints"
+    ],
+    "outputs": [
+      "MIDI format 0 bytes",
+      "SHA-256 source/output receipt and note/timing summary"
+    ],
+    "execute": [
+      "Read the package-local skills/semantic-midi/build.json and SKILL.md.",
+      "Run compile_melody.py with --validate-only to reject malformed score.",
+      "Compile with --output to a new .mid path.",
+      "Use an independent MIDI reader to confirm note count, pitches, exact ticks and tempo.",
+      "Record the two hashes and do not claim any Suno-generated fidelity."
+    ],
+    "matchup": {
+      "applies_when": [
+        "An original monophonic hook needs an exact MIDI artifact.",
+        "A machine has authored explicit notes; musical choices are already resolved."
+      ],
+      "avoid_when": [
+        "The score is polyphonic, chromatic, over 16 bars or otherwise beyond the v0 contract.",
+        "The user only specified abstract mood; no note events have been authored."
+      ]
+    },
+    "effects": [
+      "local-read",
+      "local-write"
+    ],
+    "bounds": {
+      "enforced": [
+        "Score 64KiB, 1–16 bars, 1–128 notes, exact beat fractions and validated pitch register"
+      ],
+      "operator": [
+        "The helper refuses overwriting different existing files.",
+        "No provider upload, credit spending or account authority."
+      ]
+    },
+    "stop_when": [
+      "MIDI export and round-trip receipt match expected events.",
+      "Invalid score ends in a bounded clear error without auto-correction."
+    ],
+    "proof": {
+      "status": "locally-tested",
+      "checks": [
+        "Verify 13-note original fixture read-back and deterministic bytes.",
+        "A passing local CI test does not verify Suno or listener experience."
+      ],
+      "evidence": [
+        "https://github.com/PaulTiffany/SunOmega/actions/runs/45062641951"
+      ]
+    }
+  }
 }
