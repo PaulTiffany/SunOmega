@@ -63,7 +63,7 @@ def validate_records(records: list[dict]) -> None:
                 raise ValueError(f"{rid}: invalid relation")
         # GF-style executable capability link: explicit relative package path, not execution.
         if "build_path" in record:
-            if record["kind"] != "capability" or not isinstance(record["build_path"], str) or not re.fullmatch(r"skills/[a-z0-9-]+/build\\.json", record["build_path"]):
+            if record["kind"] != "capability" or not isinstance(record["build_path"], str) or not re.fullmatch(r"skills/[a-z0-9-]+/build\.json", record["build_path"]):
                 raise ValueError(f"{rid}: invalid build_path")
 
     for rid, record in seen.items():
