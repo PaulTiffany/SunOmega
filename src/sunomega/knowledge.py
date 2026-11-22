@@ -61,6 +61,10 @@ def validate_records(records: list[dict]) -> None:
         for relation in record["relations"]:
             if not isinstance(relation, dict) or relation.get("predicate") not in PREDICATES or not isinstance(relation.get("target"), str):
                 raise ValueError(f"{rid}: invalid relation")
+        # GF-style executable capability link: explicit relative package path, not execution.
+        if "build_path" in record:
+            if record["kind"] != "capability" or not isinstance(record["build_path"], str) or not re.fullmatch(r"skills/[a-z0-9-]+/build\\.json", record["build_path"]):
+                raise ValueError(f"{rid}: invalid build_path")
 
     for rid, record in seen.items():
         for source in record["sources"]:
@@ -88,6 +92,8 @@ def to_metta(records: list[dict]) -> str:
         if r["kind"] == "source":
             lines.append(f"(URL {rid} {q(r['url'])})")
             lines.append(f"(Accessed {rid} {q(r['accessed'])})")
+        if "build_path" in r:
+            lines.append(f"(BuildPath {rid} {q(r['build_path'])})")
         for edge in r["relations"]:
             lines.append(f"(Relation {rid} {q(edge['predicate'])} {q(edge['target'])})")
     return "\n".join(lines) + "\n"
