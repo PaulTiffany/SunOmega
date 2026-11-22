@@ -70,10 +70,11 @@
       "No hidden musical inference or auto-quantization."
     ],
     "proof": {
-      "status": "locally-tested",
+      "status": "proposed",
       "checks": [
         "Use deterministic Mido note-on/off round trip and SHA-256 reproducibility.",
-        "Separately collect provider and listener evidence before claiming fidelity."
+        "Separately collect provider and listener evidence before claiming fidelity.",
+        "The semantic-score technique as an aid to composition still needs user and Suno fidelity experiments; local compiler tests do not prove that proposition."
       ],
       "evidence": [
         "https://github.com/PaulTiffany/SunOmega/actions/runs/45062641951"
