@@ -122,4 +122,10 @@ def smoke_metta(records: list[dict]) -> list:
     answer = metta.run('!(match &self (Record $id "capability") $id)')
     if "capability-official-mcp" not in str(answer):
         raise RuntimeError(f"MeTTa query did not find a known capability: {answer}")
-    return answer
+    proof = metta.run('!(match &self (BuildProofStatus "technique-lyric-prosody" $state) $state)')
+    if "proposed" not in str(proof):
+        raise RuntimeError(f"MeTTa could not retrieve GF proof scope: {proof}")
+    package = metta.run('!(match &self (BuildPath "capability-semantic-midi" $path) $path)')
+    if "skills/semantic-midi/build.json" not in str(package):
+        raise RuntimeError(f"MeTTa could not link GF package: {package}")
+    return {"capabilities": answer, "gf_proof": proof, "gf_package": package}
