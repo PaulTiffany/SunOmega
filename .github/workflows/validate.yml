@@ -18,6 +18,12 @@ jobs:
           python -m unittest discover -s tests -v
           sunomega export-metta > sunomega.generated.metta
           test -s sunomega.generated.metta
+          sunomega builds > /tmp/sunomega.builds.json
+          sunomega show technique-lyric-prosody > /tmp/sunomega.prosody.json
+          sunomega search "breathing" > /tmp/sunomega.breathing.json
+          python -c "import json; p=json.load(open('/tmp/sunomega.prosody.json')); assert p['build']['proof']['status']=='proposed'"
+          python -c "import json; p=json.load(open('/tmp/sunomega.breathing.json')); assert any(r['id']=='technique-lyric-prosody' for r in p)"
+
 
   atomspace:
     runs-on: ubuntu-latest
