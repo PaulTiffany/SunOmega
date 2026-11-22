@@ -49,6 +49,11 @@ class SemanticMIDITests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unsupported"):
             module.validate_score(self.score)
 
+    def test_invalid_tonic_type_rejected_cleanly(self):
+        self.score["tonic"] = ["D"]
+        with self.assertRaisesRegex(ValueError, "Unsupported tonic"):
+            module.validate_score(self.score)
+
     @unittest.skipUnless(importlib.util.find_spec("mido"), "mido extra not installed")
     def test_midi_determinism_and_round_trip(self):
         from mido import MidiFile
