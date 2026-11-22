@@ -55,7 +55,7 @@ def validate_score(score: dict) -> dict:
     if not isinstance(score["intent"], str) or not 1 <= len(score["intent"]) <= 500:
         raise ValueError("intent must be concise human-authored context")
     tonic, mode = score["tonic"], score["mode"]
-    if tonic not in TONICS or mode not in MODES:
+    if not isinstance(tonic, str) or not isinstance(mode, str) or tonic not in TONICS or mode not in MODES:
         raise ValueError("Unsupported tonic or mode")
     bpm, bars = score["tempo_bpm"], score["bars"]
     if type(bpm) is not int or not 40 <= bpm <= 240:
